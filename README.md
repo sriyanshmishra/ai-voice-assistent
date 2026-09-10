@@ -67,6 +67,13 @@ offline-voice-assistant/
 └── .gitignore
 ```
 
+## Competition Submission Files
+
+- [Project description PDF](submission/Offline_Voice_AI_Project_Description.pdf)
+- [Short pitch presentation](submission/Offline_Voice_AI_Pitch_Deck.pptx)
+
+The source generator is available at `tools/generate_submission_materials.py`.
+
 ## License
 
 Add the license that matches your intended distribution before publishing the repository.

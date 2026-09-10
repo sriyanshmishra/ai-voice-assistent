@@ -5,10 +5,14 @@ venv/
 env/
 .env
 .vscode/
+.docdeps/
 
 # Local model and cache files
 .cache/
 models/
+
+# Generated submission source cache
+*.pyc
 
 # OS files
 .DS_Store
