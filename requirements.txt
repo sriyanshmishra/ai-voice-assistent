@@ -1,0 +1,7 @@
+numpy
+scipy
+sounddevice
+torch
+torchaudio
+transformers
+qai-hub
