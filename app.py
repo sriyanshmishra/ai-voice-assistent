@@ -64,12 +64,8 @@ def main() -> None:
     print("   Offline Voice & Text AI Assistant (Snapdragon)")
     print("=" * 50)
 
-    try:
-        processor, model = load_model()
-    except OSError as error:
-        print(f"[!] Could not load the model: {error}")
-        print("    Run once with WHISPER_LOCAL_ONLY=0 to download it, then use offline mode.")
-        return
+    processor = None
+    model = None
 
     while True:
         print("\nChoose input method:")
@@ -79,6 +75,13 @@ def main() -> None:
         choice = input("Enter choice (1/2/3): ").strip()
 
         if choice == "1":
+            if processor is None or model is None:
+                try:
+                    processor, model = load_model()
+                except OSError as error:
+                    print(f"[!] Could not load the model: {error}")
+                    print("    Run once with WHISPER_LOCAL_ONLY=0 to download it, then use offline mode.")
+                    continue
             try:
                 audio = record_audio()
                 text = transcribe_audio(audio, processor, model)
